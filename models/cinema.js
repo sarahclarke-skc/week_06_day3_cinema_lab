@@ -37,5 +37,27 @@ Cinema.prototype.checkFilmLongerThan = function(time) {
   return result;
 };
 
+// Cinema.prototype.getRunningTime = function() {
+//   const result = this.films.map((film) => {
+//     return film.length;
+//   });
+//   return result;
+// };
+
+Cinema.prototype.totalRunningTime = function() {
+  const total = this.films.reduce((runningTotal, film) => {
+    return film.length + runningTotal;
+  }, 0);
+  return total;
+};
+
+// Cinema.prototype.totalRunningTime = function() {
+//   const runningTimes = this.getRunningTime();
+//   const total = runningTimes.reduce((runningTotal, currentValue) => {
+//     return runningTotal + currentValue;
+//   }, 0);
+//   return total;
+// };
+
 module.exports = Cinema;
 
