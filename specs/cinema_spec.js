@@ -80,4 +80,9 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting]);
   })
 
+  it('should be able to filter by any property', function() {
+    const actual = cinema.filmsByProperty('length', 164);
+    assert.deepStrictEqual(actual, [bladeRunner]);
+  })
+
 });
