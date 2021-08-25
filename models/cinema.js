@@ -30,5 +30,12 @@ Cinema.prototype.checkYearHasFilm = function(year) {
   return result;
 };
 
+Cinema.prototype.checkFilmLongerThan = function(time) {
+  const result = this.films.some((film) => {
+    return film.length >= time;
+  });
+  return result;
+};
+
 module.exports = Cinema;
 
