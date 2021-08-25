@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { transcode } = require('buffer');
 const Cinema = require('../models/cinema.js');
 const Film = require('../models/film.js');
 
@@ -67,6 +68,11 @@ describe('Cinema', function () {
   it('should be able to calculate total running time of all films', function() {
     const actual = cinema.totalRunningTime();
     assert.strictEqual(actual, 622);
+  });
+
+  it('should be able to filter films by year', function() {
+    const actual = cinema.filmsByYear(2017);
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting]);
   });
 
 });
